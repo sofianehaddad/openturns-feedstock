@@ -34,6 +34,9 @@ source:
   url: https://github.com/openturns/build/releases/download/v{{ version }}/openturns-{{ version }}-py3.6-x86_64.exe  # [win64 and py36]
   sha256: fa179d8ea5c51a9a99fb0055b58412b414362b1f5be0b8215d217a54daff85d8  # [win64 and py36]
 
+  patches:
+    - fix_conda_relocation.patch
+
 build:
   number: 204
   features:
@@ -72,6 +75,8 @@ test:
   imports:
     - openturns
     - openturns.viewer
+  commands:
+    - python -c "import openturns as ot; print(ot.Path.GetConfigDirectoryList())"
 
 about:
   home: http://openturns.org/
