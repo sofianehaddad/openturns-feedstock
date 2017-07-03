@@ -52,6 +52,8 @@ requirements:
     - blas 1.1 {{ variant }}  # [not win]
     - openblas 0.2.19|0.2.19.*  # [not win]
     - libxml2 2.9.*  # [not win]
+    - flex  # [not win]
+    - bison  # [not win]
     - muparser  # [not win]
     - tbb  # [not win]
     - nlopt  # [not win]
